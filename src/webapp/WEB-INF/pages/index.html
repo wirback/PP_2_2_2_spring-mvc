@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <title>Welcome</title>
-        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
-    </head>
-    <body>
-        <h1>Welcome</h1>
-        <h2 th:utext="${message}">..!..</h2>
-
-        <a th:href="@{/personList}">PersonList</a>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <th:block th:each="msg : ${messages}">
+        <h1 th:text="${msg}"></h1>
+    </th:block>
+</div>
+</body>
 </html>

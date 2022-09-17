@@ -22,4 +22,13 @@ public class Car {
     public String getColor() {
         return color;
     }
+
+    @Override
+    public String toString() {
+        return "\nCar{" +
+                "model='" + model + '\'' +
+                ", series=" + series +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }

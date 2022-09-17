@@ -11,12 +11,15 @@ public class Car {
         this.color = color;
     }
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "model='" + model + '\'' +
-                ", series=" + series +
-                ", color=" + color +
-                '}';
+    public String getModel() {
+        return model;
+    }
+
+    public Integer getSeries() {
+        return series;
+    }
+
+    public String getColor() {
+        return color;
     }
 }

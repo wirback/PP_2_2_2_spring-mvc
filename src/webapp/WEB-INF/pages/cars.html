@@ -3,16 +3,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>List Cars</title>
 </head>
 <body>
-<div>
-<!--    <th:block th:each="msg : ${carlist}">-->
-<!--        <h1 th:text="${msg}"></h1>-->
-<!--    </th:block>-->
 
-    <h1 th:text="${carlist}" />
+<table>
+    <tr>
+        <th>MODEL</th>
+        <th>SERIES</th>
+        <th>COLOR</th>
+    </tr>
+    <tr th:each="list : ${carlist}">
+        <td th:text="${list.getModel()}"/>
+        <td th:text="${list.getSeries()}"/>
+        <td th:text="${list.getColor()}"/>
+    </tr>
+</table>
 
 </div>
+
 </body>
 </html>

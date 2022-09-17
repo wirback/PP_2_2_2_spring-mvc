@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import web.service.CarService;
 import web.service.CarServiceImpl;
 
+import java.util.Optional;
+
 @Controller
 public class CarController {
 
@@ -15,9 +17,9 @@ public class CarController {
     private CarService carService = new CarServiceImpl();
 
     @GetMapping("/cars")
-    public String getCars(@RequestParam(value = "count", required = false) Integer countCar, Model model) {
+    public String getCars(@RequestParam(value = "count", required = false) Optional<Integer> countCar, Model model) {
 
-        model.addAttribute("carlist", carService.getCar(countCar));
+        model.addAttribute("carlist", carService.getCar(countCar.orElse(0)));
 
         return "/cars";
     }

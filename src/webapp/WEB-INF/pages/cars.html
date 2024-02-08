@@ -6,6 +6,13 @@
     <title>List Cars</title>
 </head>
 <body>
-<p th:text="${result}"></p>
+
+<table>
+<tr th:each="car : ${carlist}">
+    <td><span th:text="${car.getModel()}"></span></td>
+    <td><span th:text="${car.getSeries()}"></span></td>
+</tr>
+</table>
+
 </body>
 </html>

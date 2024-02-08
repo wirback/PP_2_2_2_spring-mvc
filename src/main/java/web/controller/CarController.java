@@ -13,7 +13,6 @@ public class CarController {
     private CarService carService = new CarServiceImpl();
     @GetMapping("/cars")
     public String getCars(@RequestParam(value = "count", required = false) Integer count, ModelMap model) {
-        System.out.println(count);
         if (count == null) {
             count = 0;
         }

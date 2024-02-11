@@ -14,9 +14,10 @@ import java.util.Optional;
 public class CarController {
     private CarService carService = new CarServiceImpl();
     @GetMapping("/cars")
-    public String getCars(@RequestParam(value = "count", required = false) Optional<Integer> count, ModelMap model) {
+    public String getCars(@RequestParam(value = "count", required = false, defaultValue = "0")
+                              Integer count, ModelMap model) {
 
-        model.addAttribute("carlist", carService.getCars(count.orElse(0)));
+        model.addAttribute("carlist", carService.getCars(count));
 
         return "cars";
     }
